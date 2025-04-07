@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYCIN Expert System - Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #0078d7;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #0078d7;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #005bb5;
+        }
+        .content {
+            padding: 20px;
+        }
+        section {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0078d7;
+        }
+        .card {
+            background-color: #0078d7;
+            color: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0078d7;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MYCIN Expert System - Dashboard</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#recent-diagnoses">Recent Diagnoses</a>
+        <a href="#system-performance">System Performance</a>
+        <a href="#activities">Activities</a>
+    </nav>
+    <div class="content">
+        <!-- Recent Diagnoses Section -->
+        <section id="recent-diagnoses">
+            <h2>Recent Diagnoses</h2>
+            <div class="card">
+                <h3>Patient: John Doe</h3>
+                <p>Symptoms: Fever, Headache</p>
+                <p>Lab Results: High WBC Count</p>
+                <p>Diagnosis: Possible Meningitis</p>
+                <p>Recommendation: Hospitalization and Antibiotic Therapy</p>
+            </div>
+            <div class="card">
+                <h3>Patient: Jane Smith</h3>
+                <p>Symptoms: Chills, Fatigue</p>
+                <p>Lab Results: Positive Blood Culture</p>
+                <p>Diagnosis: Possible Bacteremia</p>
+                <p>Recommendation: Broad-Spectrum Antibiotics</p>
+            </div>
+        </section>
+
+        <!-- System Performance Section -->
+        <section id="system-performance">
+            <h2>System Performance</h2>
+            <p>Total Diagnoses: 450</p>
+            <p>Accuracy Rate: 92%</p>
+            <p>Last Update: April 2025</p>
+        </section>
+
+        <!-- Activities Section -->
+        <section id="activities">
+            <h2>Activities</h2>
+            <p>New Rule Added: Gram-Positive Bacteria Detection</p>
+            <p>Recent Search: Antibiotic Sensitivity Tests</p>
+            <p>Admin Activity: Updated User Access Permissions</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 MYCIN Expert System</p>
+    </footer>
+</body>
+</html>
+

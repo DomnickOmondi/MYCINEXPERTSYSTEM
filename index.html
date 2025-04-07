@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYCIN Expert System - Main Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #0078d7;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #0078d7;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #005bb5;
+        }
+        .content {
+            padding: 20px;
+        }
+        section {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0078d7;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0078d7;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #0078d7;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #005bb5;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #0078d7;
+        }
+        .recommendations {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MYCIN Expert System</h1>
+    </header>
+    <nav>
+        <a href="#diagnosis">Diagnosis</a>
+        <a href="account.html">Account</a>
+        <a href="admin.html">Admin</a>
+    </nav>
+    <div class="content">
+        <!-- Diagnosis Input Form -->
+        <section id="diagnosis">
+            <h2>Diagnosis Input Form</h2>
+            <form id="diagnosis-form">
+                <div class="form-group">
+                    <label for="symptoms">Symptoms:</label>
+                    <textarea id="symptoms" name="symptoms" rows="4" placeholder="Enter symptoms..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="lab-results">Lab Results:</label>
+                    <textarea id="lab-results" name="lab-results" rows="4" placeholder="Enter lab results..."></textarea>
+                </div>
+                <button type="button" class="btn" onclick="analyzeDiagnosis()">Submit Diagnosis</button>
+                <div class="result" id="result"></div>
+                <div class="recommendations" id="recommendations"></div>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 MYCIN Expert System</p>
+    </footer>
+
+    <script>
+        const symptomsList = [
+            "fever", "chills", "headache", "stiff neck",
+            "skin rash", "confusion", "rapid heartbeat",
+            "fatigue", "shortness of breath", "abdominal pain"
+        ];
+
+        const labResultsList = [
+            "high wbc count", "positive blood culture", "gram-positive bacteria",
+            "low platelet count", "elevated crp", "positive csf culture",
+            "high glucose levels in csf", "elevated lactate levels",
+            "positive urine culture", "presence of neutrophils",
+            "elevated d-dimer", "positive stool culture", "high bilirubin",
+            "elevated esr", "positive sputum culture", "low hemoglobin",
+            "positive throat swab", "elevated ferritin", "high creatinine levels",
+            "acid-fast bacteria detected"
+        ];
+
+        function analyzeDiagnosis() {
+            const symptoms = document.getElementById("symptoms").value.toLowerCase();
+            const labResults = document.getElementById("lab-results").value.toLowerCase();
+            const resultElement = document.getElementById("result");
+            const recommendationsElement = document.getElementById("recommendations");
+
+            let diagnosis = "";
+            let recommendations = "";
+
+            if (symptoms.includes("fever")) {
+                diagnosis = "Diagnosis: Possible fever-related condition.";
+                recommendations = "Recommendation: Hydration therapy and fever management.";
+            } else if (labResults.includes("positive blood culture")) {
+                diagnosis = "Diagnosis: Potential bacteremia.";
+                recommendations = "Recommendation: Broad-spectrum antibiotics.";
+            } else {
+                diagnosis = "Diagnosis: Unable to determine with current inputs.";
+                recommendations = "Please provide more details or consult a professional.";
+            }
+
+            resultElement.textContent = diagnosis;
+            recommendationsElement.innerHTML = recommendations;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYCIN Expert System - Account Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #0078d7;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        section {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0078d7;
+        }
+        .btn {
+            background-color: #0078d7;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #005bb5;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0078d7;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MYCIN Expert System - Account Page</h1>
+    </header>
+    <div class="content">
+        <section>
+            <h2>User Information</h2>
+            <p><strong>Full Name:</strong> Dr. Example User</p>
+            <p><strong>Email:</strong> example@mycin.com</p>
+            <p><strong>Role:</strong> Medical Practitioner</p>
+        </section>
+        <section>
+            <h2>Account Settings</h2>
+            <p>Update your account details below:</p>
+            <form id="account-form">
+                <label for="fullname">Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" value="Dr. Example User"><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email" value="example@mycin.com"><br><br>
+                <label for="role">Role:</label><br>
+                <input type="text" id="role" name="role" placeholder="Enter your role" value="Medical Practitioner"><br><br>
+                <button type="button" class="btn" onclick="updateAccount()">Save Changes</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 MYCIN Expert
